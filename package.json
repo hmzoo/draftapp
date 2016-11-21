@@ -1,0 +1,23 @@
+{
+  "name": "draftapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nf start -p 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hmzoo/draftapp.git"
+  },
+  "author": "HMJ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hmzoo/draftapp/issues"
+  },
+  "homepage": "https://github.com/hmzoo/draftapp#readme",
+  "dependencies": {
+    "foreman": "^2.0.0"
+  }
+}
