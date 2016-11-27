@@ -16,6 +16,11 @@ io.on('connection', function(client) {
         ps.toRoom(client.id, "setuser", {state: 'down'});
     });
 
+    client.on('test', function(data) {
+        console.log('test',data);
+
+    });
+
     client.on('whoami', function() {
         var s = io.sockets.connected[client.id];
         siddb.newUser(client.id).then(function(result) {

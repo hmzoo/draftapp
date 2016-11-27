@@ -1,21 +1,38 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+
 import './App.css';
 
+import Profil from './components/Profil';
+import SocketState from './components/SocketState';
+import CallInput from './components/CallInput';
+
+import {sioTest} from './actions/sio';
+
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="App">
+
+                <Profil datas={this.props.profil}/>
+              <SocketState sio={this.props.sio}/>
+                <CallInput onSubmit={this.props.tryACall}/>
+            </div>
+        );
+    }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+    return {
+      profil: state.profil,
+      sio: state.sio
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        tryACall: (name)=>{dispatch(sioTest({name:name}));}
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
