@@ -14,7 +14,7 @@ export const sioAskId = () => ({
     type: SIO_SEND,
     sio: {
         channel: 'whoami',
-        data: {}
+        datas: {}
     }
 });
 
@@ -22,7 +22,7 @@ export const sioPeerSignal = (to, signal) => ({
     type: SIO_SEND,
     sio: {
         channel: 'peersignal',
-        data: {
+        datas: {
             to: to,
             signal: signal
         }

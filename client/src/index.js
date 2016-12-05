@@ -18,8 +18,9 @@ const socket = new io();
 
 let store = createStore(
   reducers,
-  applyMiddleware(thunk),
-  applyMiddleware(sioMiddleWare(socket))
+
+  applyMiddleware(sioMiddleWare(socket)),
+  applyMiddleware(thunk)
 );
 
 

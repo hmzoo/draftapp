@@ -20,6 +20,7 @@ const sio = (state = initialState, action) => {
                 infos: infos
             });
         case SIO_SEND:
+        console.log(SIO_SEND,action);
             return state;
         case SIO_SENDED:
             return state;

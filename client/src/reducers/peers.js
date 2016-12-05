@@ -24,7 +24,7 @@ export default function(state =[], action) {
         case PEERS_ADD:
             return [...state,peer(undefined,action)];
         case PEERS_DEL:
-            return state.filter(t=>t.id!==action.id);
+            return state.filter(t=>t.name!==action.name);
 
         default:
             return state

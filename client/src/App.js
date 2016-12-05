@@ -9,7 +9,7 @@ import CallInput from './components/CallInput';
 import Devices from './containers/DevicesContainer';
 import Peers from './containers/PeersContainer';
 
-import {addPeer} from './actions/peers';
+import {initPeer} from './actions/peers';
 
 
 
@@ -45,7 +45,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        tryACall: (name)=>{dispatch(addPeer(name,null));}
+        tryACall: (name)=>{dispatch(initPeer(name));}
     }
 }
 

@@ -1,14 +1,16 @@
-import simplepeer from 'simple-peer';
+import SimplePeer from 'simple-peer';
+import {sioPeerSignal} from '../actions/sio';
 
 
-export const initPeer = (name, init,cb)=> {
+export const newPeer = (name, init,dispatch,cb)=> {
 
         let peer = new SimplePeer({
             initiator: init
         });
 
         peer.on('signal', function(data) {
-          console.log("peer signal", name, data);
+          console.log("peer signal!", name, data);
+          dispatch(sioPeerSignal(name,data));
         });
 
         peer.on('connect', function() {
