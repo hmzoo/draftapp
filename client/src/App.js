@@ -6,16 +6,18 @@ import './App.css';
 import Profil from './components/Profil';
 import SocketState from './components/SocketState';
 import CallInput from './components/CallInput';
-import Devices from './components/Devices';
+import Devices from './containers/DevicesContainer';
+import Peers from './containers/PeersContainer';
 
-import {sioTest} from './actions/sio';
-import {listDevices} from './controllers/ctldevices';
+import {addPeer} from './actions/peers';
+
 
 
 
 class App extends Component {
   componentDidMount() {
     console.log(this.props);
+
   }
 
 
@@ -23,10 +25,11 @@ class App extends Component {
         return (
             <div className="App">
 
-                <Profil datas={this.props.profil}/>
+              <Profil datas={this.props.profil}/>
               <SocketState sio={this.props.sio}/>
-                <CallInput onSubmit={this.props.tryACall}/>
-              <Devices devices={this.props.devices} />
+              <CallInput onSubmit={this.props.tryACall}/>
+              <Devices />
+              <Peers />
             </div>
         );
     }
@@ -42,7 +45,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        tryACall: (name)=>{dispatch(sioTest({name:name}));}
+        tryACall: (name)=>{dispatch(addPeer(name,null));}
     }
 }
 

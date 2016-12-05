@@ -2,6 +2,6 @@ import React from 'react';
 
 export default({datas}) => (
     <div >
-        {datas.name}
+      {datas.name}
     </div>
 )

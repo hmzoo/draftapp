@@ -8,23 +8,25 @@ export const sioConnection = (s = null) => ({
     socket: s
 });
 
-
-
-export const sioTest = (data) => ({
-    type: SIO_SEND,
-    channel: 'test',
-    data: data,
-    infos:'socket io test'
-});
+export const sioTest = (data) => ({type: SIO_SEND, channel: 'test', data: data, infos: 'socket io test'});
 
 export const sioAskId = () => ({
     type: SIO_SEND,
-    channel: 'whoami',
-    data: {},
-    infos:'asking id'
+    sio: {
+        channel: 'whoami',
+        data: {}
+    }
 });
 
-export const sioDelSended = (id) => ({
-    type: SIO_SENDED,
-    id: id
+export const sioPeerSignal = (to, signal) => ({
+    type: SIO_SEND,
+    sio: {
+        channel: 'peersignal',
+        data: {
+            to: to,
+            signal: signal
+        }
+    }
 });
+
+export const sioDelSended = (id) => ({type: SIO_SENDED, id: id});
