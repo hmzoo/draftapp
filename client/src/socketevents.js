@@ -1,5 +1,5 @@
 import {sioConnection, sioAskId} from './actions/sio';
-import {setProfilName} from './actions';
+import {setProfilName} from './profil/actions';
 import {peerSignal} from './actions/peers';
 
 const socketEvents = (dispatch, socket) => {
