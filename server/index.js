@@ -83,7 +83,7 @@ io.on('connection', function(client) {
     });
 
     client.on('peersignal', function(data) {
-        console.log('peersignal',data)
+        //console.log('peersignal to',data.to)
         if (!data) {
             return;
         }

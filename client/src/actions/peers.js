@@ -13,3 +13,29 @@ export const initPeer = (name) => {
     newPeer(name,true,dispatch,(peer)=>{dispatch(addPeer(name,peer,true));})
   }
 }
+
+export const acceptPeer = (name) => {
+  return (dispatch, getState)=>{
+    newPeer(name,false,dispatch,(peer)=>{dispatch(addPeer(name,peer,false));})
+  }
+}
+
+export const peerSignal =(from,signal) =>{
+  return (dispatch, getState)=>{
+    let peers=getState().peers.filter(t=>t.name===from);
+    console.log(peers);
+    if(peers.length===0){
+      newPeer(from,false,dispatch,(peer)=>{
+        dispatch(addPeer(from,peer,false));
+        //dispatch(peerSignal(from,signal));
+      })
+    }else{
+      let peer=peers[0];
+      peer.peer.signal(signal);
+    }
+
+
+  }
+
+
+}

@@ -1,6 +1,5 @@
-import {listDevices,getSelfStream} from '../controllers/ctldevices';
+import {listDevices,getSelfStream} from './helpers';
 
-export const DEVICES_LIST = 'DEVICES_LIST';
 export const DEVICES_LISTED = 'DEVICES_LISTED';
 export const DEVICES_SET_VIDEOID = 'DEVICES_SET_VIDEOID';
 export const DEVICES_SET_AUDIOID = 'DEVICES_SET_AUDIOID';

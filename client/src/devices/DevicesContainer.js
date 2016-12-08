@@ -1,8 +1,8 @@
 
 import { connect } from 'react-redux';
-import Devices from '../components/Devices';
+import Devices from './Devices';
 
-import {getAllDevices,selectVideoId,selectAudioId} from '../actions/devices';
+import {getAllDevices,selectVideoId,selectAudioId} from './actions';
 
 
 const mapStateToProps = (state) => {

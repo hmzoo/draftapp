@@ -4,7 +4,7 @@ export default({peers}) => (
     <div >
       {peers.map(p => (
         <div key={p.id} className='box /3/12 fl' >
-          {p.id}
+          {p.name}
         </div>
       ))}
     </div>

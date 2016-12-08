@@ -1,6 +1,6 @@
 //Profil reducer
 
-import { SET_PROFIL_NAME } from '../actions/types';
+import { SET_PROFIL_NAME } from './actions';
 
 const initialState = {
   name: ''

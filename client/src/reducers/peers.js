@@ -6,7 +6,7 @@ const peer = (state = {}, action) => {
 
   switch (action.type) {
       case 'PEERS_ADD':
-          return {id:action.id,peer:action.peer};
+          return {id:action.id,name:action.name,peer:action.peer};
 
       case 'PEERS_DEL':;
           return state;

@@ -1,5 +1,5 @@
 
-import { DEVICES_LISTED,DEVICES_SET_VIDEOID,DEVICES_SET_AUDIOID,DEVICES_SET_STREAM } from '../actions/devices';
+import { DEVICES_LISTED,DEVICES_SET_VIDEOID,DEVICES_SET_AUDIOID,DEVICES_SET_STREAM } from './actions';
 
 const initialState = {
   audioDevices: [],

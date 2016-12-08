@@ -3,10 +3,10 @@ import {connect} from 'react-redux';
 
 import './App.css';
 
-import Profil from './components/Profil';
+import Profil from './profil/Profil';
 import SocketState from './components/SocketState';
 import CallInput from './components/CallInput';
-import Devices from './containers/DevicesContainer';
+import Devices from './devices/DevicesContainer';
 import Peers from './containers/PeersContainer';
 
 import {initPeer} from './actions/peers';
