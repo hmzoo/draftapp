@@ -6,18 +6,18 @@ import thunk from 'redux-thunk';
 
 import io from 'socket.io-client';
 
-import sioMiddleWare from './middleware/sio';
+import sioMiddleWare from './sio/middleware';
 import socketEvents from './socketevents';
 
 import App from './App';
 import './index.css';
-import reducers from './reducers';
+import reducer from './reducer';
 
 const socket = new io();
 
 
 let store = createStore(
-  reducers,
+  reducer,
 
   applyMiddleware(sioMiddleWare(socket)),
   applyMiddleware(thunk)

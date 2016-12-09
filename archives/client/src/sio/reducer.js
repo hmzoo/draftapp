@@ -1,4 +1,4 @@
-import {SIO_CONNECTION, SIO_SEND, SIO_SENDED} from '../actions/sio';
+import {SIO_CONNECTION, SIO_SEND, SIO_SENDED} from './actions';
 
 const initialState = {
     connected: false,

@@ -1,5 +1,5 @@
 
-import {SIO_SEND} from '../actions/sio';
+import {SIO_SEND} from './actions';
 
 const sioMiddleWare = socket => () => next => action => {
   console.log("SOCKET MDDW",action);

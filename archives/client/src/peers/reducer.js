@@ -1,4 +1,4 @@
-import { PEERS_ADD,PEERS_DEL } from '../actions/peers';
+import { PEERS_ADD,PEERS_DEL } from './actions';
 
 
 

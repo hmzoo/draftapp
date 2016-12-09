@@ -1,5 +1,5 @@
 import SimplePeer from 'simple-peer';
-import {sioPeerSignal} from '../actions/sio';
+import {sioPeerSignal} from '../sio/actions';
 
 
 export const newPeer = (name, init,dispatch,cb)=> {

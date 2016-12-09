@@ -4,12 +4,12 @@ import {connect} from 'react-redux';
 import './App.css';
 
 import Profil from './profil/Profil';
-import SocketState from './components/SocketState';
-import CallInput from './components/CallInput';
+import Sio from './sio/Sio';
+import CallInput from './peers/CallInput';
 import Devices from './devices/DevicesContainer';
-import Peers from './containers/PeersContainer';
+import Peers from './peers/PeersContainer';
 
-import {initPeer} from './actions/peers';
+import {initPeer} from './peers/actions';
 
 
 
@@ -26,7 +26,7 @@ class App extends Component {
             <div className="App">
 
               <Profil datas={this.props.profil}/>
-              <SocketState sio={this.props.sio}/>
+              <Sio sio={this.props.sio}/>
               <CallInput onSubmit={this.props.tryACall}/>
               <Devices />
               <Peers />

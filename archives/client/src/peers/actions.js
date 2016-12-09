@@ -1,4 +1,4 @@
-import {newPeer} from '../controllers/ctlPeer';
+import {newPeer} from './ctlPeer';
 
 export const PEERS_ADD = 'PEERS_ADD';
 export const PEERS_DEL = 'PEERS_DEL';
