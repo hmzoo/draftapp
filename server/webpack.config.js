@@ -4,20 +4,17 @@ var path = require('path');
 
 var webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 
 
 var dir_src = path.resolve(__dirname, 'src');
-var dir_build = path.resolve(__dirname, 'build');
+var dir_build = path.resolve(__dirname, 'dist');
 
 module.exports = {
-    entry: path.resolve(dir_src, 'main.js'),
+    entry: path.resolve(dir_src, 'index.js'),
     output: {
         path: dir_build,
-        filename: 'bundle.js'
-    },
-    devServer: {
-        contentBase: dir_build,
+        filename: 'index.js'
     },
     module: {
         loaders: [
@@ -26,12 +23,6 @@ module.exports = {
               loader: 'babel-loader',
               include: dir_src
 
-            },
-            {
-              test: /\.less$/,
-                //loader: "style-loader!css-loader!less-loader",
-                loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader"),
-                include: dir_src
             }
 
         ]
@@ -39,10 +30,8 @@ module.exports = {
     plugins: [
         // Simply copies the files over
         new CopyWebpackPlugin([
-            { from: dir_src+'/index.html'},
-            { from: dir_src+ '/assets'}
+            { from: dir_src+ '/datas'}
         ]),
-        new ExtractTextPlugin("style.css"),
         // Avoid publishing files when compilation fails
         new webpack.NoErrorsPlugin()
     ],
